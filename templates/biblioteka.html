@@ -1,0 +1,101 @@
+{% extends "index.html" %}
+
+{% block title %}biblioteka{% endblock %}
+
+{% block content %}
+
+	<div class="w3-row">
+		<div class="w3-container w3-hide-small w3-mobile w3-col m3">
+			<img src="/static/img/sectionIcons/biblioteka_icon.png" style="width: 100%">
+		</div>
+
+		<div class="w3-container w3-col m9 w3-justify">
+			<h1>Jak korzystać?</h1>
+			<p>
+				Suspendisse nisi lectus, lobortis nec risus ut, venenatis tincidunt velit. Sed malesuada eros odio, a mollis tellus venenatis id. Aenean suscipit semper lacus id porta. Etiam sit amet finibus tellus, non cursus lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras iaculis tristique sem vitae sollicitudin. Mauris congue vitae odio non sagittis. Donec ac blandit ante, sit amet porttitor purus. Donec nec tortor nec urna egestas efficitur ac vel lorem. Nunc venenatis ex sit amet nisi eleifend feugiat. Sed sapien est, pretium id molestie at, rutrum eu sapien. Integer facilisis blandit nunc, nec feugiat diam vehicula ut. Quisque sit amet nunc ut libero porta iaculis.
+			</p>
+		</div>
+	</div>
+
+	<div class="w3-text-red">
+		{{ form.name.errors }}
+		{{ form.surname.errors }}
+		{{ form.email.errors }}
+		{{ form.emailConf.errors }}
+		{{ form.phone.errors }}
+	</div>
+
+	<div class="w3-row w3-container" style="padding-top: 48px">
+		<div class="table-responsive">
+		<table class="w3-table">
+			<thead>
+				<tr>
+					<th>tytuł</th>
+					<th>autor</th>
+					<th>status</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for book in b %}
+				<tr id="title-{{book.id}}" onclick="bookInfo('{{book.id}}')" class="w3-hover-opacity" style="cursor: pointer;">
+					<td>{{ book.title }}</td>
+					<td>
+						{% if book.authors.all|length > 1 %}
+							{% for author in book.authors.all %}
+								{% if forloop.revcounter0 != 0 %}
+									{{ author.first_name|first }}. {{ author.last_name }},  
+								{% else %}
+									{{ author.first_name|first }}. {{ author.last_name }}
+								{% endif %}
+							{% endfor %}
+						{% else %}
+							{% for author in book.authors.all %}
+								{{ author.first_name|first }}. 
+								{{ author.last_name }}
+							{% endfor %}					
+						{% endif %}
+					</td>
+					<td>
+						{% load status_filter %}
+						{% if book.id|getStatus == 4 %}
+							<span class="w3-text-orange">Zamówiona</span>
+						{% elif book.id|getStatus == 5 %}
+							<span class="w3-text-red">Wypożyczona ({{ book.id|dueDate|date:"d-m-Y" }})</span>
+						{% else %}
+							<span class="w3-text-green">Dostępna</span>
+						{% endif %}
+					</td>
+				</tr>
+				<tr id='content-{{book.id}}' class="w3-hide">
+					<td colspan="3">
+						<div class="w3-container" style="border-left: solid;">
+							<h4>Tematyka:</h4>
+							<p>
+								{% for tag in book.tags.all %}
+									{% if forloop.revcounter0 != 0 %}
+										{{ tag.subject}}, 
+									{% else %}
+										{{ tag.subject}}
+									{% endif %}
+								{% endfor %}
+							</P>
+							<h4>Opis:</h4>
+							<p class="w3-justify">
+								{{ book.description }}
+							</p>
+							<p><b>Liczba stron: </b>{{ book.pages }}</p>
+							{% if book.id|getStatus != 5 and book.id|getStatus != 4 %}
+								<p><button onclick="orderForm({{ book.id }})" class="w3-button w3-black">REZERWUJ</button></p>
+								{% include "orderForm.html" %}
+							{% endif %}
+						</div>
+						<div style="padding-bottom: 32px"></div>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Description" content="Oficjalna strona SKNu Austriackiej Szkoły Ekonomii" />
+	<meta name="Keywords" content="ase, austriacka, szkoła, ekonomia, skn, sgh" />
+	<meta http-equiv="Content-Language" content="pl" />
+	<meta name="Author" content="Artur Żółkoś" />
+	<meta http-equiv="Creation-Date" content="Sun, 1 Oct 2017 12:35:19 GMT" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
+
+	<!-- External CSS -->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="/static/css/master.css">
+
+	<!-- External scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+	<!-- Custom scripts -->
+	<script src="/static/js/master.js"></script>
+
+	<!-- Custom fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Exo+2:400,700&amp;subset=latin-ext" rel="stylesheet"> 
+
+	<title>SKN ASE</title>
+</head>
+<body>
+
+	<!-- HEADER -->
+	<div class="w3-center container-fluid">
+		<img src="/static/img/menuLogo.png">
+	</div>
+
+	<!-- NAVIGATION -->
+	<div class="w3-white" data-spy="affix" data-offset-top="215">
+		<div class="w3-content w3-center w3-hide-small w3-border-top w3-border-bottom">
+			<a id="home" href="/" class="w3-button" {% if request.path == '/' %}style="font-weight: bold"{% endif %}>SKN ASE</a>
+			<a href="/onas" class="w3-button" {% if request.path == '/onas/' %}style="font-weight: bold"{% endif %}>o nas</a>
+			<a href="/biblioteka" class="w3-button" {% if request.path == '/biblioteka/' %}style="font-weight: bold"{% endif %}>biblioteka</a>
+			<a href="/projekty" class="w3-button" {% if request.path == '/projekty/' %}style="font-weight: bold"{% endif %}>projekty</a>
+			<a href="/recenzje" class="w3-button" {% if request.path == '/recenzje/' %}style="font-weight: bold"{% endif %}>recenzje</a>
+			<a href="/kontakt" class="w3-button" {% if request.path == '/kontakt/' %}style="font-weight: bold"{% endif %}>kontakt</a>
+		</div>
+		<div class="w3-bar w3-hide-large w3-hide-medium w3-border-top w3-border-bottom">
+			<img id="smallLogo" src="/static/img/favicon.ico" class="w3-left">
+			<span class="w3-bar-item w3-left"><b>{% block title %}{% endblock %}</b></span>
+			<a href="javascript:void(0)" class="w3-bar-item w3-button w3-right" onclick="navbarOpen()">&#9776;</a>
+		</div>
+
+		<div id="navList" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-border-bottom ">
+			<a href="/" class="w3-bar-item w3-button">SKN ASE</a>
+			<a href="/onas" class="w3-bar-item w3-button">o nas</a>
+			<a href="/biblioteka" class="w3-bar-item w3-button">biblioteka</a>
+			<a href="/projekty" class="w3-bar-item w3-button">projekty</a>
+			<a href="/recenzje" class="w3-bar-item w3-button">recenzje</a>
+			<a href="/kontakt" class="w3-bar-item w3-button">kontakt</a>
+		</div>
+	</div>
+
+	<div class="container-fluid"><div style="height: 48px"></div></div>
+
+	<!-- CONTENT -->
+	<div id="content" class="w3-content w3-justify container-fluid">
+		{% block content %}{% endblock %}
+	</div>
+
+	<!-- FOOTER -->
+	{% include "includes/footer.html" %}
+
+</body>
+</html>

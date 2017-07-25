@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{% block title %}Rezerwacja{% endblock %}
+
+{% block content %}
+
+{% if error == 1 %}
+	<h1>Przepraszamy</h1>
+	<p>
+		W naszej bibliotece, każdy użytkownik może wypożyczyć tylko jedną książkę.
+	</p>
+{% else %}
+	<h1>Dziękujemy za dokonanie rezerwacji</h1>
+	<p>
+		Administrator skontakuje się z Tobą wkrótce, w celu ustalenia terminu odbioru książki.
+	</p>
+{% endif %}
+
+<a href="/biblioteka/">Powrót</a>
+
+{% endblock %}

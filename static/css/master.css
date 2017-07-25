@@ -1,0 +1,51 @@
+html, body {
+	font-family: 'Exo 2', sans-serif;
+	font-size: medium;
+}
+
+a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+}
+
+.affix {
+	top: 0;
+	width: 100%;
+	z-index: 9999;
+}
+
+.affix + .container-fluid {
+	padding-top: 38px;
+}
+
+#content {
+	padding-bottom: 48px;
+}
+
+#smallLogo {
+	height: 30px;
+	width: 34px;
+	padding-left: 8px;
+	padding-top: 4px;
+}
+
+.field {
+	font-weight: bold;
+}
+
+ul.errorlist {
+	margin: 0;
+	padding: 0;
+}
+.errorlist li {
+	background-color: red;
+	color: white;
+	display: block;
+	margin: 0 0 3px;
+	text-align: center;
+}
+
+.text-field {
+}
+
+.input-field {
+}

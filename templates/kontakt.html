@@ -1,0 +1,45 @@
+{% extends "index.html" %}
+
+{% block title %}kontakt{% endblock %}
+
+{% block content %}
+
+	<div class="w3-row">
+		<div class="w3-container w3-hide-small w3-mobile w3-col m3">
+			<img src="/static/img/sectionIcons/kontakt_icon.png" style="width: 100%">
+		</div>
+
+		<div class="w3-container w3-col m9 w3-justify">
+			<h1>Dołącz do nas!</h1>
+			<p>
+				Suspendisse nisi lectus, lobortis nec risus ut, venenatis tincidunt velit. Sed malesuada eros odio, a mollis tellus venenatis id. Aenean suscipit semper lacus id porta. Etiam sit amet finibus tellus, non cursus lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras iaculis tristique sem vitae sollicitudin. Mauris congue vitae odio non sagittis. Donec ac blandit ante, sit amet porttitor purus. Donec nec tortor nec urna egestas efficitur ac vel lorem. Nunc venenatis ex sit amet nisi eleifend feugiat. Sed sapien est, pretium id molestie at, rutrum eu sapien. Integer facilisis blandit nunc, nec feugiat diam vehicula ut. Quisque sit amet nunc ut libero porta iaculis.
+			</p>
+		</div>
+	</div>
+
+	<div class="w3-text-red">
+		{{ form.email.errors }}
+		{{ form.message.errors }}
+	</div>
+
+	<div class="w3-row w3-container" style="padding-top: 32px">
+
+	<h2>Napisz do nas</h2>
+
+	<p>
+		Skontaktować się nami można przez poniższy formularz, lub bezpośrednio przez adres [mamy maila sknowego?]
+	</p>
+
+		<form action="" method="post">{% csrf_token %}
+			<p class="field">email:</p>
+			<p>{{ form.email }}</p>
+			<p class="field">wiadomość:</p>
+			<p>{{ form.message }}</p>
+			<div class="w3-padding-16">
+				<input type="submit" value="Wyślij wiadomość" class="w3-button w3-black">
+			</div>
+		</form>
+
+	</div>
+
+{% endblock %}
