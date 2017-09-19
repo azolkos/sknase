@@ -43,16 +43,16 @@
 						{% if book.authors.all|length > 1 %}
 							{% for author in book.authors.all %}
 								{% if forloop.revcounter0 != 0 %}
-									{{ author.first_name|first }}. {{ author.last_name }},  
+									{{ author.first_name|first }}. {{ author.last_name }},
 								{% else %}
 									{{ author.first_name|first }}. {{ author.last_name }}
 								{% endif %}
 							{% endfor %}
 						{% else %}
 							{% for author in book.authors.all %}
-								{{ author.first_name|first }}. 
+								{{ author.first_name|first }}.
 								{{ author.last_name }}
-							{% endfor %}					
+							{% endfor %}
 						{% endif %}
 					</td>
 					<td>
@@ -73,7 +73,7 @@
 							<p>
 								{% for tag in book.tags.all %}
 									{% if forloop.revcounter0 != 0 %}
-										{{ tag.subject}}, 
+										{{ tag.subject}},
 									{% else %}
 										{{ tag.subject}}
 									{% endif %}
@@ -84,10 +84,8 @@
 								{{ book.description }}
 							</p>
 							<p><b>Liczba stron: </b>{{ book.pages }}</p>
-							{% if book.id|getStatus != 5 and book.id|getStatus != 4 %}
-								<p><button onclick="orderForm({{ book.id }})" class="w3-button w3-black">REZERWUJ</button></p>
-								{% include "orderForm.html" %}
-							{% endif %}
+							<p><button onclick="orderForm({{ book.id }})" class="w3-button w3-black">REZERWUJ</button></p>
+							{% include "orderForm.html" %}
 						</div>
 						<div style="padding-bottom: 32px"></div>
 					</td>
