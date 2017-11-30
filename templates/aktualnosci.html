@@ -18,7 +18,7 @@
 	</div>
 
 	{% for article in a %}
-	<div class="w3-row">
+	<div class="w3-row w3-container" style="padding-top: 48px">
 		<h2>{{article.topic}}</h2>
 		<h5>{{article.author_first_name}} {{article.author_last_name}}, {{article.date}}</h5>
 		<p>{{article.article}}</p>
