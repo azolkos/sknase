@@ -3,6 +3,10 @@ html, body {
 	font-size: medium;
 }
 
+html {
+	margin-left: calc(100vw - 100%);
+}
+
 a:link, a:visited, a:hover, a:active {
 	text-decoration: none;
 }
@@ -48,4 +52,12 @@ ul.errorlist {
 }
 
 .input-field {
+}
+
+input {
+	width: 100%;
+}
+
+textarea {
+	width: 100%;
 }

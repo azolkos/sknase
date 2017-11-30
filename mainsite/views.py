@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from mainsite.models import book, order, user, status, orderHistory
+from mainsite.models import book, order, user, status, orderHistory, article
 from mainsite.forms import orderForm, contactForm
 
 import datetime
@@ -64,6 +64,10 @@ def biblioteka(request):
 
 def projekty(request):
     return render(request, 'projekty.html')
+
+def aktualnosci(request):
+    a = article.objects.all().order_by('-date')
+    return render(request, 'aktualnosci.html', locals())
 
 def recenzje(request):
     return render(request, 'recenzje.html')

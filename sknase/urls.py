@@ -17,7 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 
 # View imports
-from mainsite.views import main_page, o_nas, biblioteka, projekty, recenzje, kontakt, rezerwacja
+from mainsite.views import main_page, o_nas, biblioteka, projekty, aktualnosci, recenzje, kontakt, rezerwacja
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^onas/$', o_nas),
     url(r'^biblioteka/$', biblioteka),
     url(r'^projekty/$', projekty),
+    url(r'^aktualnosci/$', aktualnosci),
     url(r'^recenzje/$', recenzje),
     url(r'^kontakt/$', kontakt),
     url(r'^rezerwacja/$', rezerwacja),

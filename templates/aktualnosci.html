@@ -1,6 +1,6 @@
 {% extends "index.html" %}
 
-{% block title %}recenzje{% endblock %}
+{% block title %}aktualności{% endblock %}
 
 {% block content %}
 
@@ -10,11 +10,19 @@
 		</div>
 
 		<div class="w3-container w3-col m9 w3-justify">
-			<h1>Recenzje wybranych książek</h1>
+			<h1>Aktualności ekonomiczne</h1>
 			<p>
 				Suspendisse nisi lectus, lobortis nec risus ut, venenatis tincidunt velit. Sed malesuada eros odio, a mollis tellus venenatis id. Aenean suscipit semper lacus id porta. Etiam sit amet finibus tellus, non cursus lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras iaculis tristique sem vitae sollicitudin. Mauris congue vitae odio non sagittis. Donec ac blandit ante, sit amet porttitor purus. Donec nec tortor nec urna egestas efficitur ac vel lorem. Nunc venenatis ex sit amet nisi eleifend feugiat. Sed sapien est, pretium id molestie at, rutrum eu sapien. Integer facilisis blandit nunc, nec feugiat diam vehicula ut. Quisque sit amet nunc ut libero porta iaculis.
 			</p>
 		</div>
 	</div>
+
+	{% for article in a %}
+	<div class="w3-row">
+		<h2>{{article.topic}}</h2>
+		<h5>{{article.author_first_name}} {{article.author_last_name}}, {{article.date}}</h5>
+		<p>{{article.article}}</p>
+	</div>
+	{% endfor %}
 
 {% endblock %}

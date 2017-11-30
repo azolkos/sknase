@@ -72,3 +72,13 @@ class orderHistory(models.Model):
 
     def __unicode__(self):
         return u'%s %s %s %s' % (self.book, self.user, self.order_date, self.overdue)
+
+class article(models.Model):
+    date = models.DateField(auto_now_add = True)
+    topic = models.CharField(max_length=100)
+    author_first_name = models.CharField(max_length = 30)
+    author_last_name = models.CharField(max_length = 40)
+    article = models.TextField()
+
+    def __unicode__(self):
+        return u'%s %s %s' % (self.topic, self.author_last_name, self.date)
