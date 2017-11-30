@@ -16,6 +16,7 @@
 
 	<!-- Custom CSS -->
 	<link rel="stylesheet" type="text/css" href="/static/css/master.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/linkstyle.css">
 
 	<!-- External scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -23,6 +24,7 @@
 
 	<!-- Custom scripts -->
 	<script src="/static/js/master.js"></script>
+	<script src="/static/js/modernizr.custom.js"></script>
 
 	<!-- Custom fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Exo+2:400,700&amp;subset=latin-ext" rel="stylesheet">
@@ -39,12 +41,14 @@
 	<!-- NAVIGATION -->
 	<div class="w3-white" data-spy="affix" data-offset-top="215">
 		<div class="w3-content w3-center w3-hide-small w3-border-top w3-border-bottom" style="max-width: 1160px">
-			<a id="home" href="/" class="w3-button" {% if request.path == '/' %}style="font-weight: bold"{% endif %}>SKN ASE</a>
-			<a href="/onas" class="w3-button" {% if request.path == '/onas/' %}style="font-weight: bold"{% endif %}>o nas</a>
-			<a href="/biblioteka" class="w3-button" {% if request.path == '/biblioteka/' %}style="font-weight: bold"{% endif %}>biblioteka</a>
-			<a href="/projekty" class="w3-button" {% if request.path == '/projekty/' %}style="font-weight: bold"{% endif %}>projekty</a>
-			<a href="/aktualnosci" class="w3-button" {% if request.path == '/aktualności/' %}style="font-weight: bold"{% endif %}>aktualności</a>
-			<a href="/kontakt" class="w3-button" {% if request.path == '/kontakt/' %}style="font-weight: bold"{% endif %}>kontakt</a>
+		<nav class="cl-effect-1">
+			<a id="home" href="/" class="w3-button w3-hover-none" {% if request.path == '/' %}style="font-weight: bold"{% endif %}>SKN ASE</a>
+			<a href="/onas" class="w3-button w3-hover-none" {% if request.path == '/onas/' %}style="font-weight: bold"{% endif %}>o nas</a>
+			<a href="/biblioteka" class="w3-button w3-hover-none" {% if request.path == '/biblioteka/' %}style="font-weight: bold"{% endif %}>biblioteka</a>
+			<a href="/projekty" class="w3-button w3-hover-none" {% if request.path == '/projekty/' %}style="font-weight: bold"{% endif %}>projekty</a>
+			<a href="/aktualnosci" class="w3-button w3-hover-none" {% if request.path == '/aktualności/' %}style="font-weight: bold"{% endif %}>aktualności</a>
+			<a href="/kontakt" class="w3-button w3-hover-none" {% if request.path == '/kontakt/' %}style="font-weight: bold"{% endif %}>kontakt</a>
+		</nav>
 		</div>
 		<div class="w3-bar w3-hide-large w3-hide-medium w3-border-top w3-border-bottom">
 			<img id="smallLogo" src="/static/img/favicon.ico" class="w3-left">
