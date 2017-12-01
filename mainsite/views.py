@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from mainsite.models import book, order, user, status, orderHistory, article
@@ -66,7 +67,15 @@ def projekty(request):
     return render(request, 'projekty.html')
 
 def aktualnosci(request):
-    a = article.objects.all().order_by('-date')
+    arts = article.objects.all().order_by('-date')
+    page = request.GET.get('page', 1)
+    paginator = Paginator(arts, 1)
+    try:
+        a = paginator.page(page)
+    except PageNotAnInteger:
+        a = paginator.page(1)
+    except EmptyPage:
+        a = paginator.page(paginator.num_pages)
     return render(request, 'aktualnosci.html', locals())
 
 def recenzje(request):
