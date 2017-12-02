@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
-from tinymce.models import HTMLField
+from tinymce import models as tinymce_models
 
 # Create your models here.
 class author(models.Model):
@@ -33,7 +33,7 @@ class book(models.Model):
     publisher = models.ForeignKey(publisher)
     pages = models.PositiveIntegerField()
     tags = models.ManyToManyField(subject)
-    description = models.TextField()
+    description = tinymce_models.HTMLField()
 
     def __unicode__(self):
         return self.title
@@ -79,7 +79,7 @@ class article(models.Model):
     topic = models.CharField(max_length=100)
     author_first_name = models.CharField(max_length = 30)
     author_last_name = models.CharField(max_length = 40)
-    article = HTMLField()
+    article = tinymce_models.HTMLField()
 
     def __unicode__(self):
         return u'%s %s %s' % (self.topic, self.author_last_name, self.date)

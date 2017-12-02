@@ -120,7 +120,7 @@
 							</P>
 							<h4>Opis:</h4>
 							<p class="w3-justify">
-								{{ book.description }}
+								{{ book.description|safe }}
 							</p>
 							<p><b>Liczba stron: </b>{{ book.pages }}</p>
 							<p><button onclick="orderForm({{ book.id }})" class="w3-button w3-black">REZERWUJ</button></p>
