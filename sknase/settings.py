@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-5&4&+nzg$s4nxyz@oq%nfmmd-bb2x3ta6%4u&zof2i1xz7fp4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = ['*']
@@ -125,7 +125,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #Unhash STATIC_ROOT for production
-#STATIC_ROOT = os.path.join(BASE_DIR, "static")
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+#STATICFILES_DIRS = (
+#    os.path.join(BASE_DIR, 'static'),
+#)
