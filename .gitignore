@@ -1,8 +1,4 @@
 *.pyc
-<<<<<<< HEAD
-__pycache__
-=======
 __pycache__
 settings.py
 db.sqlite3
->>>>>>> 876455b417ac099ee53c8c545191b03ed6ad265d
