@@ -1,28 +1,56 @@
 html, body {
 	font-family: 'Exo 2', sans-serif;
 	font-size: medium;
+	height: 100%;
+    margin: 0;
 }
 
-html {
+/* body {
 	margin-left: calc(100vw - 100%);
+} */
+
+.bg {
+    /* The image used */
+    background-image: url("../img/backgrounds/bg_main.jpg");
+
+    /* Full height */
+    height: 75%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 a:link, a:visited, a:hover, a:active {
 	text-decoration: none;
 }
 
-.affix {
+#NAVIGATION {
+	margin-bottom: 48px;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+	position: fixed;
 	top: 0;
 	width: 100%;
-	z-index: 9999;
 }
 
-.affix + .container-fluid {
-	padding-top: 38px;
+.sticky + #CONTENT {
+	padding-top: 98px;
 }
 
-#content {
+#CONTENT {
 	padding-bottom: 48px;
+	max-width: 1160px;
+}
+
+#FOOTER {
+	max-width: 1160px;
+	border-top: 1px solid;
 }
 
 #smallLogo {
@@ -46,12 +74,6 @@ ul.errorlist {
 	display: block;
 	margin: 0 0 3px;
 	text-align: center;
-}
-
-.text-field {
-}
-
-.input-field {
 }
 
 input {
