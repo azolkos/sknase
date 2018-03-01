@@ -21,3 +21,22 @@ function closeForm(id) {
 	var x = document.getElementById("form-".concat("", id));
 	x.style.display = 'none'
 }
+
+function navStick() {
+	if (window.pageYOffset >= sticky) {
+		navbar.classList.add("sticky")
+	} else {
+		navbar.classList.remove("sticky");
+	}
+} 
+
+$(function() {
+	$("#SCROLL").on("click", function(e) {
+		e.preventDefault();
+		$("html, body").animate(
+			{ scrollTop: $($(this).attr("href")).offset().top },
+			500,
+			"linear"
+		);
+	});
+});

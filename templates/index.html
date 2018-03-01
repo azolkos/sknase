@@ -19,7 +19,7 @@
 	<link rel="stylesheet" type="text/css" href="/static/css/linkstyle.css">
 
 	<!-- External scripts -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 	<!-- Custom scripts -->
@@ -34,7 +34,38 @@
 <body>
 
 	<!-- HEADER -->
-	<div id="HEADER" class="w3-hide-small container-fluid bg"></div>
+	<div id="HEADER" class="w3-hide-small cover">
+		<section id="GREETING" class="hero-image w3-hide">
+			<h1>Dowiedz się więcej o ASE</h1>
+			<a id="SCROLL" href="#NAVIGATION"><span></span>Przewiń</a>
+		</section> 
+	</div>
+	<script type="text/javascript">
+		var currentPage = "{{request.path}}";
+		var coverDiv = document.getElementById("HEADER");
+		var greet = document.getElementById("GREETING")
+		switch(currentPage) {
+			case "/":
+				coverDiv.classList.add("bg_main");
+				greet.classList.remove("w3-hide")
+				break;
+			case "/onas/":
+				coverDiv.classList.add("bg_onas");
+				break;
+			case "/biblioteka/":
+				coverDiv.classList.add("bg_biblioteka");
+				break;
+			case "/projekty/":
+				coverDiv.classList.add("bg_projekty");
+				break;
+			case "/aktualnosci/":
+				coverDiv.classList.add("bg_aktualnosci");
+				break;
+			case "/kontakt/":
+				coverDiv.classList.add("bg_kontakt");
+				break;
+		}
+	</script>
 
 	<!-- NAVIGATION -->
 	<nav id="NAVIGATION" class="navbar navbar-expand-sm navbar-light bg-light cl-effect-1" data-toggle="affix" >
@@ -61,19 +92,10 @@
 	</div>
 
 	<!-- Sticky navbar script -->
-	<script>
-			window.onscroll = function() {navStick()};
-	
-			var navbar = document.getElementById("NAVIGATION");
-			var sticky = navbar.offsetTop;
-	
-			function navStick() {
-				if (window.pageYOffset >= sticky) {
-					navbar.classList.add("sticky")
-				} else {
-					navbar.classList.remove("sticky");
-				}
-			} 
+	<script type="text/javascript">
+		window.onscroll = function() {navStick()};
+		var navbar = document.getElementById("NAVIGATION");
+		var sticky = navbar.offsetTop;
 	</script>
 
 	<!-- FOOTER -->
