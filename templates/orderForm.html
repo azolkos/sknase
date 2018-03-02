@@ -1,5 +1,5 @@
 <div id="form-{{book.id}}" class="w3-modal">
-	<div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:500px">
+	<div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:500px; padding-top: 16px">
 		<div class="w3-container">
 			<h3>Rezerwacja:</h3> <h2>{{book.title}}</h2>
 			<span onclick="closeForm({{ book.id }})" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="zamknij">X</span>
@@ -31,7 +31,7 @@
 					<input type="hidden" name="book_id" value="{{ book.id }}">
 				</table>
 				<div class="w3-padding-16">
-					<input type="submit" value="REZERWUJ" class="w3-button w3-black" style="width: 100%"">
+					<input type="submit" value="REZERWUJ" class="w3-button" style="background-color: #373737; color: #f4f4f4; width: 100%">
 				</div>
 			</form>
 

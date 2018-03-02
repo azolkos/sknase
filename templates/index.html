@@ -68,26 +68,27 @@
 	</script>
 
 	<!-- NAVIGATION -->
-	<nav id="NAVIGATION" class="navbar navbar-expand-sm navbar-light bg-light cl-effect-1" data-toggle="affix" >
+	<nav id="NAVIGATION" class="navbar navbar-expand-sm navbar-light cl-effect-1" data-toggle="affix" style="background-color: #C0B283">
 		<div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
-			<a id="home" href="/" class="navbar-brand w3-text-black w3-hover-none" {% if request.path == '/' %}style="font-weight: bold"{% endif %}>SKN ASE</a>
+			<!-- <div class="navbar-header"><span class="navbar-brand">LOGO</span></div> -->
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#MAINNAVBAR" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse text-center" id="MAINNAVBAR">
 				<ul class="navbar-nav">
-					<li class="nav-item"><a href="/onas" class="nav-link w3-text-black w3-hover-none" {% if request.path == '/onas/' %}style="font-weight: bold"{% endif %}>o nas</a></li>
-					<li class="nav-item"><a href="/biblioteka" class="nav-link w3-text-black w3-hover-none" {% if request.path == '/biblioteka/' %}style="font-weight: bold"{% endif %}>biblioteka</a></li>
-					<li class="nav-item"><a href="/projekty" class="nav-link w3-text-black w3-hover-none" {% if request.path == '/projekty/' %}style="font-weight: bold"{% endif %}>projekty</a></li>
-					<li class="nav-item"><a href="/aktualnosci" class="nav-link w3-text-black w3-hover-none" {% if request.path == '/aktualnosci/' %}style="font-weight: bold"{% endif %}>aktualności</a></li>
-					<li class="nav-item"><a href="/kontakt" class="nav-link w3-text-black w3-hover-none" {% if request.path == '/kontakt/' %}style="font-weight: bold"{% endif %}>kontakt</a></li>
+					<li class="nav-item" {% if request.path == '/' %}style="background-color: #373737; font-weight: bold"{% endif %}><a href="/" class="nav-link w3-hover-none" style="color: #f4f4f4;">ASE</a></li>
+					<li class="nav-item" {% if request.path == '/onas/' %}style="background-color: #373737; font-weight: bold"{% endif %}><a href="/onas" class="nav-link w3-hover-none" style="color: #f4f4f4;">o nas</a></li>
+					<li class="nav-item" {% if request.path == '/biblioteka/' %}style="background-color: #373737; font-weight: bold"{% endif %}><a href="/biblioteka" class="nav-link w3-hover-none" style="color: #f4f4f4;">biblioteka</a></li>
+					<li class="nav-item" {% if request.path == '/projekty/' %}style="background-color: #373737; font-weight: bold"{% endif %}><a href="/projekty" class="nav-link w3-hover-none" style="color: #f4f4f4;">projekty</a></li>
+					<li class="nav-item" {% if request.path == '/aktualnosci/' %}style="background-color: #373737; font-weight: bold"{% endif %}><a href="/aktualnosci" class="nav-link w3-hover-none" style="color: #f4f4f4;">aktualności</a></li>
+					<li class="nav-item" {% if request.path == '/kontakt/' %}style="background-color: #373737; font-weight: bold"{% endif %}><a href="/kontakt" class="nav-link w3-hover-none" style="color: #f4f4f4;">kontakt</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 
 	<!-- CONTENT -->
-	<div id="CONTENT" class="container-fluid">
+	<div id="CONTENT">
 		{% block content %}{% endblock %}
 	</div>
 

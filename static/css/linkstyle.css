@@ -1,5 +1,11 @@
 /* Effect 1: Brackets */
-.cl-effect-1 a::before,
+.cl-effect-1 li:hover {
+	background-color: #DCD0C0;
+}
+.cl-effect-1 li {
+	padding: 0px 10px;
+}
+/* .cl-effect-1 a::before,
 .cl-effect-1 a::after {
 	display: inline-block;
 	opacity: 0;
@@ -32,4 +38,4 @@
 	-webkit-transform: translateX(0px);
 	-moz-transform: translateX(0px);
 	transform: translateX(0px);
-}
+} */

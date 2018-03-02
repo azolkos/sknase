@@ -4,18 +4,29 @@
 
 {% block content %}
 
-{% if error == 1 %}
-	<h1>Przepraszamy</h1>
-	<p>
-		W naszej bibliotece, każdy użytkownik może wypożyczyć tylko jedną książkę.
-	</p>
-{% else %}
-	<h1>Dziękujemy za dokonanie rezerwacji</h1>
-	<p>
-		Administrator skontakuje się z Tobą wkrótce, w celu ustalenia terminu odbioru książki.
-	</p>
-{% endif %}
-
-<a href="/biblioteka/">Powrót</a>
+<div class="headrow">
+	<div class="container-fluid inside_row">	
+		{% if error == 1 %}
+			<div class="section_title w3-center">
+				<h2>Przepraszamy</h2>
+			</div>
+			<div class="section_content">
+				<p>
+					W naszej bibliotece, każdy użytkownik może wypożyczyć tylko jedną książkę.
+				</p>
+				<a href="/biblioteka/">Powrót</a>
+			</div>
+		{% else %}
+			<div class="section_title w3-center">	
+				<h2>Dziękujemy za dokonanie rezerwacji</h2>
+			</div>
+			<div class="section_content">
+				<p>
+					Administrator skontakuje się z Tobą wkrótce, w celu ustalenia terminu odbioru książki.
+				</p>
+			</div>
+		{% endif %}
+	</div>
+</div>
 
 {% endblock %}

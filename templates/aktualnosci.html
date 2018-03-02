@@ -4,50 +4,55 @@
 
 {% block content %}
 
-	<div class="w3-row">
-		<div class="w3-container w3-hide-small w3-mobile w3-col m3">
-			<img src="/static/img/sectionIcons/biblioteka_icon.png" style="width: 100%">
-		</div>
-
-		<div class="w3-container w3-col m9 w3-justify">
-			<h1>Aktualności ekonomiczne</h1>
-			<p>
-				Suspendisse nisi lectus, lobortis nec risus ut, venenatis tincidunt velit. Sed malesuada eros odio, a mollis tellus venenatis id. Aenean suscipit semper lacus id porta. Etiam sit amet finibus tellus, non cursus lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras iaculis tristique sem vitae sollicitudin. Mauris congue vitae odio non sagittis. Donec ac blandit ante, sit amet porttitor purus. Donec nec tortor nec urna egestas efficitur ac vel lorem. Nunc venenatis ex sit amet nisi eleifend feugiat. Sed sapien est, pretium id molestie at, rutrum eu sapien. Integer facilisis blandit nunc, nec feugiat diam vehicula ut. Quisque sit amet nunc ut libero porta iaculis.
-			</p>
+	<div class="headrow">
+		<div class="container-fluid inside_row">
+			<div class="section_title w3-center">
+				<h2>Aktualności ekonomiczne</h2>
+			</div>
+			<div class="section_content">
+				<p>
+					Suspendisse nisi lectus, lobortis nec risus ut, venenatis tincidunt velit. Sed malesuada eros odio, a mollis tellus venenatis id. Aenean suscipit semper lacus id porta. Etiam sit amet finibus tellus, non cursus lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras iaculis tristique sem vitae sollicitudin. Mauris congue vitae odio non sagittis. Donec ac blandit ante, sit amet porttitor purus. Donec nec tortor nec urna egestas efficitur ac vel lorem. Nunc venenatis ex sit amet nisi eleifend feugiat. Sed sapien est, pretium id molestie at, rutrum eu sapien. Integer facilisis blandit nunc, nec feugiat diam vehicula ut. Quisque sit amet nunc ut libero porta iaculis.
+				</p>
+			</div>
 		</div>
 	</div>
 
-	{% for article in a %}
-	<div class="w3-row w3-container" style="padding-top: 48px">
-		<h2>{{article.topic}}</h2>
-		<h5>{{article.author_first_name}} {{article.author_last_name}}, {{article.date}}</h5>
-		<p>{{article.article|safe}}</p>
-	</div>
-	{% endfor %}
-
-	{% if a.has_other_pages %}
-		<div class="w3-center" style="padding-top: 36px">
-		<div class="w3-bar">
-			{% if a.has_previous %}
-			<a href="?page={{ a.previous_page_number }}" class="w3-button w3-hover-black">&laquo;</a>
-			{% else %}
-			<a class="w3-button w3-hover-none"><span>&laquo;</span></a>
-			{% endif %}
-		{% for i in a.paginator.page_range %}
-			{% if a.number == i %}
-			<a class="w3-button w3-black w3-hover-black"><span>{{ i }} <span class="sr-only">(current)</span></span></a>
-			{% else %}
-			<a href="?page={{ i }}" class="w3-button w3-hover-black">{{ i }}</a>
-			{% endif %}
+	
+	<div class="nextrow">
+		{% for article in a %}
+		<div class="container-fluid inside_row">
+			<div class="section_title">
+				<h2>{{article.topic}}</h2>
+				<h5>{{article.author_first_name}} {{article.author_last_name}}, {{article.date}}</h5>
+			</div>
+			<div class="section_content">
+				<p>{{article.article|safe}}</p>
+				{% if a.has_other_pages %}
+					<div class="w3-center" style="padding-top: 36px">
+					<div class="w3-bar">
+						{% if a.has_previous %}
+						<a href="?page={{ a.previous_page_number }}" class="w3-button w3-hover-black">&laquo;</a>
+						{% else %}
+						<a class="w3-button w3-hover-none"><span>&laquo;</span></a>
+						{% endif %}
+					{% for i in a.paginator.page_range %}
+						{% if a.number == i %}
+						<a class="w3-button w3-black w3-hover-black"><span>{{ i }} <span class="sr-only">(current)</span></span></a>
+						{% else %}
+						<a href="?page={{ i }}" class="w3-button w3-hover-black">{{ i }}</a>
+						{% endif %}
+					{% endfor %}
+						{% if a.has_next %}
+						<a href="?page={{ a.next_page_number }}" class="w3-button w3-hover-black">&raquo;</a>
+						{% else %}
+						<a class="w3-button w3-hover-none"><span>&raquo;</span></a>
+						{% endif %}
+					</div>
+					</div>
+				{% endif %}
+			</div>
+		</div>
 		{% endfor %}
-			{% if a.has_next %}
-			<a href="?page={{ a.next_page_number }}" class="w3-button w3-hover-black">&raquo;</a>
-			{% else %}
-			<a class="w3-button w3-hover-none"><span>&raquo;</span></a>
-			{% endif %}
-		</div>
-		</div>
-	{% endif %}
-
+	</div>
 
 {% endblock %}
