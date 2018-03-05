@@ -66,7 +66,7 @@ def biblioteka(request):
 def projekty(request):
     return render(request, 'projekty.html')
 
-def aktualnosci(request):
+def publikacje(request):
     arts = article.objects.all().order_by('-date')
     page = request.GET.get('page')
     if page != None:
@@ -78,7 +78,7 @@ def aktualnosci(request):
     #     a = paginator.page(1)
     # except EmptyPage:
     #     a = paginator.page(paginator.num_pages)
-    return render(request, 'aktualnosci.html', locals())
+    return render(request, 'publikacje.html', locals())
 
 def recenzje(request):
     return render(request, 'recenzje.html')
