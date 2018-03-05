@@ -102,3 +102,7 @@ ol.simple-list > li:before {
 .section_content a {
 	color: #C0B283;
 }
+
+.nextrow a {
+    color: #C0B283;
+}

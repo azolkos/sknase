@@ -12,6 +12,7 @@
 					<h5>{{chosen.author_first_name}} {{chosen.author_last_name}}, {{chosen.date}}</h5>
 				</div>
 				<div class="section_content">
+					<p><a href="/aktualnosci/">Powrót</a></p>
 					<p>{{chosen.article|safe}}</p>
 					<p><a href="/aktualnosci/">Powrót</a></p>
 				</div>
@@ -36,7 +37,7 @@
 		<div class="nextrow">
 			<div class="container-fluid inside_row">
 				<div class="section_title w3-center">
-					<h2>{{article.topic}}</h2>
+					<h2><a href="?page={{article.id}}">{{article.topic}}</a></h2>
 					<h5>{{article.author_first_name}} {{article.author_last_name}}, {{article.date}}</h5>
 				</div>
 				<div class="section_content">
