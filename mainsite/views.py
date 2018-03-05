@@ -68,14 +68,16 @@ def projekty(request):
 
 def aktualnosci(request):
     arts = article.objects.all().order_by('-date')
-    page = request.GET.get('page', 1)
-    paginator = Paginator(arts, 1)
-    try:
-        a = paginator.page(page)
-    except PageNotAnInteger:
-        a = paginator.page(1)
-    except EmptyPage:
-        a = paginator.page(paginator.num_pages)
+    page = request.GET.get('page')
+    if page != None:
+        chosen = article.objects.get(pk=page)
+    # paginator = Paginator(arts, 1)
+    # try:
+    #     a = paginator.page(page)
+    # except PageNotAnInteger:
+    #     a = paginator.page(1)
+    # except EmptyPage:
+    #     a = paginator.page(paginator.num_pages)
     return render(request, 'aktualnosci.html', locals())
 
 def recenzje(request):

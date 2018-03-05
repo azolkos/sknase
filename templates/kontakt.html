@@ -13,14 +13,14 @@
 				<p>
 					Suspendisse nisi lectus, lobortis nec risus ut, venenatis tincidunt velit. Sed malesuada eros odio, a mollis tellus venenatis id. Aenean suscipit semper lacus id porta. Etiam sit amet finibus tellus, non cursus lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras iaculis tristique sem vitae sollicitudin. Mauris congue vitae odio non sagittis. Donec ac blandit ante, sit amet porttitor purus. Donec nec tortor nec urna egestas efficitur ac vel lorem. Nunc venenatis ex sit amet nisi eleifend feugiat. Sed sapien est, pretium id molestie at, rutrum eu sapien. Integer facilisis blandit nunc, nec feugiat diam vehicula ut. Quisque sit amet nunc ut libero porta iaculis.
 				</p>
+				<div class="w3-text-red">
+					{{ form.email.errors }}
+					{{ form.message.errors }}
+				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="w3-text-red">
-		{{ form.email.errors }}
-		{{ form.message.errors }}
-	</div>
 
 	<div class="nextrow">
 		<div class="container-fluid inside_row">
@@ -30,7 +30,7 @@
 			<div class="section_content">
 
 				<p>
-					Skontaktować się nami można przez poniższy formularz, lub bezpośrednio przez adres [mamy maila sknowego?]
+					Skontaktować się nami można przez poniższy formularz, lub bezpośrednio przez adres <a href="mailto:skn.ase.sgh@gmail.com" target="_top">skn.ase.sgh@gmail.com</a>
 				</p>
 
 				<form action="" method="post">{% csrf_token %}

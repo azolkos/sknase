@@ -1,6 +1,9 @@
 html, body {
-	font-family: 'Exo 2', sans-serif;
-	font-size: medium;
+	/* font-family: 'Exo 2', sans-serif; */
+	/* font-family: 'Roboto Slab', serif; */
+	/* font-family: 'Cormorant', serif; */
+	font-family: 'Work Sans', sans-serif;
+	font-size: 12pt;
 	height: 100%;
 	margin: 0;
 	color: #515151;
@@ -86,4 +89,8 @@ textarea {
 
 .w3-button:hover {
 	background-color: #C0B283 !important;
+}
+
+.w3-button {
+	background-color: #373737 !important;
 }
