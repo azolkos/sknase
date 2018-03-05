@@ -15,7 +15,9 @@ class orderForm(forms.Form):
         is_valid = validate_email(mail ,verify=True)
         if mail == confirmation and is_valid:
             return confirmation
-        else:
+        elif not is_valid:
+            raise forms.ValidationError(u"Wprowadzony został nieistniejący adres email. Wprowadź poprawny adres.")
+        elif mail != confirmation:
             raise forms.ValidationError(u"Potwierdzenie adresu email nie powiodło się. Upewnij się, że został wpisany prawidłowy adres email.")
 
 class contactForm(forms.Form):

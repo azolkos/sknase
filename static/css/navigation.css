@@ -1,0 +1,22 @@
+#NAVIGATION {
+	z-index: 9999;
+}
+
+.navlink {
+	color: #f4f4f4;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+.sticky + #CONTENT {
+	padding-top: 56px;
+}
+
+.section_title h2 {
+	font-size: 48px;
+}

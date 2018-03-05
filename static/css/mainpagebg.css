@@ -1,0 +1,109 @@
+/* BACKGROUNDS */
+.cover {
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg_main {
+	background-image: url('../img/backgrounds/bg_main.jpg');
+	background-color: #557a95;
+	height: calc(100% - 56px); 
+	background-attachment: fixed;
+}
+.bg_onas {
+	background-image: url('../img/backgrounds/bg_main.jpg');
+	height: 25%; 
+}
+.bg_biblioteka {
+	background-image: url('../img/backgrounds/bg_main.jpg');
+	height: 25%; 
+}
+.bg_projekty {
+	background-image: url('../img/backgrounds/bg_main.jpg');
+	height: 25%; 
+}
+.bg_aktualnosci {
+	background-image: url('../img/backgrounds/bg_main.jpg');
+	height: 25%; 
+}
+.bg_kontakt {
+	background-image: url('../img/backgrounds/bg_main.jpg');
+	height: 25%; 
+}
+
+/* Place text in the middle of the image */
+section {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+section::after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	content: '';
+	width: 100%;
+	height: 80%;
+	background: -webkit-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.8) 80%,rgba(0,0,0,.8) 100%);
+	background: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.8) 80%,rgba(0,0,0,.8) 100%);
+}
+section h1 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	color: #f4f4f4;
+	font : normal 400 64px/1 'Josefin Sans', sans-serif;
+	text-align: center;
+	white-space: nowrap;
+}
+
+#GREETING a {
+	padding-top: 60px;
+}
+#GREETING a span {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 46px;
+	height: 46px;
+	margin-left: -23px;
+	border: 1px solid #f4f4f4;
+	border-radius: 100%;
+	box-sizing: border-box;
+}
+#GREETING a span::after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	content: '';
+	width: 16px;
+	height: 16px;
+	margin: -12px 0 0 -8px;
+	border-left: 1px solid #f4f4f4;
+	border-bottom: 1px solid #f4f4f4;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	box-sizing: border-box;
+}
+
+.hero-image a {
+	position: absolute;
+	bottom: 20%;
+	left: calc(50% - 46px);
+	z-index: 2;
+	display: inline-block;
+	-webkit-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+	color: #f4f4f4;
+	font : normal 400 20px/1 'Josefin Sans', sans-serif;
+	letter-spacing: .1em;
+	text-decoration: none;
+	transition: opacity .3s;
+}
+.hero-image a:hover {
+	opacity: .5;
+}
