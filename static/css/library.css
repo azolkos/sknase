@@ -1,11 +1,11 @@
 #PRZECZYTAJ {
-	background-image: url('../img/icons/003-eye.png');
+	background-image: url('../img/icons/regulamin.png');
 }
 #WYBIERZ {
-	background-image: url('../img/icons/002-clipboard.png')
+	background-image: url('../img/icons/wybor.png')
 }
 #WYPELNIJ {
-	background-image: url('../img/icons/001-like.png')
+	background-image: url('../img/icons/zatwierdzenie.png')
 }
 .text_box3 {
 	margin-top: 24px;
