@@ -1,0 +1,73 @@
+#OPIEKUN {
+    background-image: url('../img/profile/sol.jpg');
+}
+#PREZES {
+    background-image: url('../img/profile/sol.jpg');
+}
+#WICE {
+    background-image: url('../img/profile/pie.jpg');
+}
+#ADMIN {
+    background-image: url('../img/profile/pro.jpg');
+}
+#PROMO {
+    background-image: url('../img/profile/pie.jpg');
+}
+#HR {
+    background-image: url('../img/profile/jab.jpg');
+}
+#ZOLK {
+    background-image: url('../img/profile/art.jpg');
+}
+#MAKI {
+    background-image: url('../img/profile/kon.jpg');
+}
+#DUPL {
+    background-image: url('../img/profile/dup.jpg');
+}
+
+.text_box2 {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.profile_float {
+    float: left;
+	width: 33.33%;
+	padding-left: 24px;
+	padding-right: 24px;
+}
+
+.profile_float2 {
+    float: left;
+    width: 33.33%;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.text_box2 h4 {
+    color: #C0B283;
+}
+
+.icon_box2 {
+	width: 70%;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-top: 70%;
+    /* height: 200px; */
+    border-radius: 100%;
+    margin: auto;
+}
+
+.icon_box2:hover {
+    /* filter: sepia(50%); */
+}
+
+@media (max-width:500px) {
+    .profile_float {
+        float: none;
+        padding-bottom: 48px;
+        width: 100%;
+    }
+}

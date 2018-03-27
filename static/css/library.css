@@ -1,11 +1,14 @@
 #PRZECZYTAJ {
-	background-image: url('../img/icons/regulamin.png');
+    background-image: url('../img/icons/regulamin.png');;
+    height: 100px;
 }
 #WYBIERZ {
-	background-image: url('../img/icons/wybor.png')
+    background-image: url('../img/icons/wybor.png');
+    height: 100px;
 }
 #WYPELNIJ {
-	background-image: url('../img/icons/zatwierdzenie.png')
+    background-image: url('../img/icons/zatwierdzenie.png');
+    height: 100px;
 }
 .text_box3 {
 	margin-top: 24px;
@@ -53,6 +56,13 @@ ol.simple-list > li:before {
 	overflow: auto;
 	font-weight: bold;
 	background-color: #f4f4f4;
+}
+
+@media (max-width: 500px) {
+    .collapsible {
+        font-size: 12px;
+        padding: 12px;
+    }
 }
 
 .active, .collapsible:hover {

@@ -12,11 +12,11 @@ import datetime
 import os
 # Create your views here.
 def main_page(request):
-    currentDir = os.path.dirname(__file__)
-    filePath = os.path.join(currentDir, "../static/img/slider")
-    files = os.listdir(filePath)
-    fileCount = range(len(files))
-    firstItem = files[0]
+    # currentDir = os.path.dirname(__file__)
+    # filePath = os.path.join(currentDir, "../static/img/slider")
+    # files = os.listdir(filePath)
+    # fileCount = range(len(files))
+    # firstItem = files[0]
     return render(request, 'mainPage.html', locals())
 
 def o_nas(request):

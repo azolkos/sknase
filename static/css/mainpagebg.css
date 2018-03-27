@@ -107,8 +107,8 @@ section img {
 
 .hero-image a {
 	position: absolute;
-	bottom: 20%;
-	left: calc(50% - 46px);
+	bottom: 25%;
+	left: calc(50% - 30px);
 	z-index: 2;
 	display: inline-block;
 	-webkit-transform: translate(0, -50%);
