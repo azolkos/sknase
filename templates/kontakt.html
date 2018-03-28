@@ -7,31 +7,49 @@
 	<div class="headrow">
 		<div class="container-fluid inside_row">
 			<div class="section_title w3-center">
-				<h2>Skontaktuj się z nami!</h2>
+				<h2>Rekrutacja</h2>
 			</div>
 			<div class="section_content">
 				<p>
-					Suspendisse nisi lectus, lobortis nec risus ut, venenatis tincidunt velit. Sed malesuada eros odio, a mollis tellus venenatis id. Aenean suscipit semper lacus id porta. Etiam sit amet finibus tellus, non cursus lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras iaculis tristique sem vitae sollicitudin. Mauris congue vitae odio non sagittis. Donec ac blandit ante, sit amet porttitor purus. Donec nec tortor nec urna egestas efficitur ac vel lorem. Nunc venenatis ex sit amet nisi eleifend feugiat. Sed sapien est, pretium id molestie at, rutrum eu sapien. Integer facilisis blandit nunc, nec feugiat diam vehicula ut. Quisque sit amet nunc ut libero porta iaculis.
+					Chcesz dołączyć do SKN ASE i rozwijać swoją wiedzę o szkole austriackiej? Proces rekrutacji nie odbywa się w ściśle określonych ramach czasowych - skontaktuj się z nami, a zaprosimy Cię na krótką rozmowę. Przyjdź na najbliższą <a href="">prelekcję</a> lub napisz przez poniższy formularz.
 				</p>
-				<div class="w3-text-red">
-					{{ form.email.errors }}
-					{{ form.message.errors }}
+				
+				<div class="w3-center" style="margin-top: 48px; margin-bottom: 48px">
+					<h4>SKN ASE jest dla Ciebie, jeśli…</h4>
 				</div>
+
+				<div class="floating_item">
+						<div id="PRZECZYTAJ" class="icon_box3"></div>
+						<div class="text_box3">Interesujesz lub chcesz zainteresować się ekonomią - to podstawa!</div>
+				</div>
+				<div class="floating_item">
+					<div id="WYBIERZ" class="icon_box3"></div>
+					<div class="text_box3">Nie boisz się czytać, myśleć i dyskutować - cenimy szeroką wiedzę, otwarty umysł i zacięcie debatanckie.</div>
+				</div>
+				<div class="floating_item">
+					<div id="WYPELNIJ" class="icon_box3"></div>
+					<div class="text_box3">Chcesz działać - w każdym semestrze w Kole powstają nowe <a href="/projekty">projekty</a>, kolejny może być Twój!</div>
+				</div>
+
 			</div>
 		</div>
 	</div>
 
-
 	<div class="nextrow">
 		<div class="container-fluid inside_row">
-			<div class="section_title">
+			<div class="section_title w3-center">
 				<h2>Napisz do nas</h2>
 			</div>
 			<div class="section_content">
 
 				<p>
-					Skontaktować się nami można przez poniższy formularz, lub bezpośrednio przez adres <a href="mailto:skn.ase.sgh@gmail.com" target="_top">skn.ase.sgh@gmail.com</a>
+					Masz jakiekolwiek pytania? Skontaktować się nami można przez poniższy formularz, lub bezpośrednio przez adres <a href="mailto:skn.ase.sgh@gmail.com" target="_top">skn.ase.sgh@gmail.com</a>
 				</p>
+
+				<div class="w3-text-red">
+					{{ form.email.errors }}
+					{{ form.message.errors }}
+				</div>
 
 				<form action="" method="post">{% csrf_token %}
 					<p class="field">email:</p>
@@ -39,9 +57,10 @@
 					<p class="field">wiadomość:</p>
 					<p>{{ form.message }}</p>
 					<div class="w3-padding-16">
-						<input type="submit" value="Wyślij wiadomość" class="w3-button w3-black">
+						<input type="submit" value="Wyślij wiadomość" class="w3-button" style="background-color: #373737; color: #f4f4f4; width: 100%">
 					</div>
 				</form>
+
 			</div>
 		</div>
 	</div>

@@ -38,15 +38,12 @@
 	padding-right: 24px;
 }
 
-.profile_float2 {
-    float: left;
-    width: 33.33%;
-    padding-left: 24px;
-    padding-right: 24px;
-}
-
 .text_box2 h4 {
     color: #C0B283;
+}
+
+.text_box2 h5 {
+    font-weight: bold;
 }
 
 .icon_box2 {
