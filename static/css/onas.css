@@ -1,23 +1,23 @@
 #OPIEKUN {
-    background-image: url('../img/profile/sol.jpg');
+    background-image: url('../img/profile/sol.png');
 }
 #PREZES {
-    background-image: url('../img/profile/sol.jpg');
+    background-image: url('../img/profile/sol.png');
 }
 #WICE {
-    background-image: url('../img/profile/pie.jpg');
+    background-image: url('../img/profile/pie.png');
 }
 #ADMIN {
-    background-image: url('../img/profile/pro.jpg');
+    background-image: url('../img/profile/pro.png');
 }
 #PROMO {
-    background-image: url('../img/profile/pie.jpg');
+    background-image: url('../img/profile/pie.png');
 }
 #HR {
-    background-image: url('../img/profile/jab.jpg');
+    background-image: url('../img/profile/jab.png');
 }
 #ZOLK {
-    background-image: url('../img/profile/art.jpg');
+    background-image: url('../img/profile/art.png');
 }
 #MAKI {
     background-image: url('../img/profile/kon.jpg');
@@ -55,10 +55,6 @@
     /* height: 200px; */
     border-radius: 100%;
     margin: auto;
-}
-
-.icon_box2:hover {
-    /* filter: sepia(50%); */
 }
 
 @media (max-width:500px) {
